@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyceo - Сучасна освітня платформа</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Блок авторизации (Показывается, если не вошел) -->
+    <div id="auth-container" class="auth-wrapper">
+        <div class="auth-card">
+            <div class="logo">Lyceo</div>
+            <h2>З поверненням!</h2>
+            <p class="subtitle">Увійдіть, щоб продовжити навчання</p>
+            
+            <input type="email" id="email" placeholder="Електронна пошта">
+            <input type="password" id="password" placeholder="Пароль (мін. 6 символів)">
+            
+            <button id="btn-login" class="btn-primary">Увійти</button>
+            <button id="btn-signup" class="btn-secondary">Створити акаунт</button>
+            <p id="auth-msg" class="msg"></p>
+        </div>
+    </div>
+
+    <!-- Основной интерфейс (Показывается, если вошел) -->
+    <div id="classroom-container" class="app-layout hidden">
+        
+        <!-- Боковое меню -->
+        <aside class="sidebar">
+            <div class="logo">Lyceo</div>
+            <nav>
+                <a href="#" class="nav-item active">🏠 Головна</a>
+                <a href="#" class="nav-item">📅 Календар</a>
+                <a href="#" class="nav-item">📚 Мої класи</a>
+            </nav>
+        </aside>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Мої класи</h1>
+                <div class="user-profile">
+                    <span id="user-email"></span>
+                    <button id="btn-logout" class="btn-logout" title="Вийти">Вийти</button>
+                </div>
+            </header>
+
+            <!-- Создание класса -->
+            <div class="create-section">
+                <input type="text" id="new-class-name" placeholder="Назва нового класу (напр. 10-А)">
+                <button id="btn-create-class" class="btn-primary">+ Створити</button>
+            </div>
+
+            <!-- Сетка с карточками классов -->
+            <div id="class-list" class="classes-grid">
+                <!-- Карточки будут появляться здесь -->
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
